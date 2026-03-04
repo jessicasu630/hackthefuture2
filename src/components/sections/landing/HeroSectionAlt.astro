@@ -1,0 +1,28 @@
+---
+import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+
+const { title, subTitle, url } = Astro.props;
+const btnTitle = Astro.currentLocale === 'fr' ? 'Lancer Resolv DRS' : 'Launch Resolv DRS';
+
+interface Props {
+  title: string;
+  subTitle?: string;
+  url?: string;
+}
+---
+
+<section class="relative mx-auto max-w-[85rem] px-4 pt-10 pb-24 sm:px-6 lg:px-8">
+  <div class="mx-auto mt-5 max-w-xl text-center">
+    <h2 class="block text-4xl leading-tight font-bold tracking-tight text-balance text-neutral-800 md:text-5xl lg:text-6xl dark:text-neutral-200">
+      {title}
+    </h2>
+  </div>
+  <div class="mx-auto mt-5 max-w-3xl text-center">
+    {subTitle && <p class="text-lg text-pretty text-neutral-600 dark:text-neutral-400">{subTitle}</p>}
+  </div>
+  {url && (
+    <div class="mt-8 flex justify-center gap-3">
+      <PrimaryCTA url={url} title={btnTitle} noArrow={true} />
+    </div>
+  )}
+</section>
