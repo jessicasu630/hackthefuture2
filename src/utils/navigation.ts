@@ -7,16 +7,16 @@ const footerLinks = [
     section: 'Platform',
     links: [
       { name: 'Resolv DRS', url: '/' },
-      { name: 'Architecture', url: '#architecture' },
-      { name: 'Use Cases', url: '#use-cases' },
+      { name: 'Architecture', url: '/#architecture' },
+      { name: 'Use Cases', url: '/#use-cases' },
     ],
   },
   {
     section: 'Company',
     links: [
-      { name: 'Helios Industrial Components', url: '#' },
-      { name: 'Contact', url: '#contact' },
-      { name: 'Privacy', url: '#' },
+      { name: 'Resolv', url: '/company' },
+      { name: 'Contact', url: '/contact' },
+      { name: 'Privacy', url: '/privacy' },
     ],
   },
 ];

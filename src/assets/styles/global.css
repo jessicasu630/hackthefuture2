@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 @import 'tailwindcss';
 
 /* Preline UI */
@@ -112,6 +113,30 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+  :root {
+    --resolv-bg: #eef6f0;
+    --resolv-bg-soft: #e3f0e7;
+    --resolv-surface: #f4fbf6;
+    --resolv-card: #ebf6ef;
+    --resolv-border: #c2d8c7;
+    --resolv-text: #163a2a;
+    --resolv-muted: #4b695a;
+    --resolv-accent: #1f5a3a;
+    --resolv-accent-hover: #184a31;
+  }
+
+  .dark {
+    --resolv-bg: #101a16;
+    --resolv-bg-soft: #14231d;
+    --resolv-surface: #162620;
+    --resolv-card: #1b2f28;
+    --resolv-border: #2b4339;
+    --resolv-text: #dbe8df;
+    --resolv-muted: #a8beb0;
+    --resolv-accent: #7ab58f;
+    --resolv-accent-hover: #8fc6a2;
+  }
+
   *,
   ::after,
   ::before,
@@ -123,5 +148,75 @@
   button:not(:disabled),
   [role='button']:not(:disabled) {
     cursor: pointer;
+  }
+
+  html,
+  body {
+    font-family: 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
+    color: var(--resolv-text);
+    background-color: var(--resolv-bg);
+  }
+
+  body.resolv-theme {
+    background-image:
+      radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--resolv-accent) 18%, transparent) 0, transparent 42%),
+      radial-gradient(circle at 82% 26%, color-mix(in srgb, var(--resolv-accent) 12%, transparent) 0, transparent 36%),
+      linear-gradient(color-mix(in srgb, var(--resolv-border) 34%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--resolv-border) 34%, transparent) 1px, transparent 1px);
+    background-size: auto, auto, 64px 64px, 64px 64px;
+    background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+    background-attachment: fixed;
+  }
+
+  html:not(.dark) body.resolv-theme {
+    background-color: var(--resolv-bg-soft);
+  }
+
+  .resolv-theme h1,
+  .resolv-theme h2 {
+    font-family: 'Instrument Serif', 'Iowan Old Style', 'Times New Roman', serif;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    color: var(--resolv-text);
+  }
+
+  /* Cohesive image styling for product/blog/feature visuals */
+  .resolv-theme :where(img[data-astro-image]):not(.ui-avatar):not(.ui-plain-image) {
+    border: 1px solid color-mix(in srgb, var(--resolv-border) 85%, transparent);
+    border-radius: 1.05rem;
+    box-shadow:
+      0 22px 50px -38px rgba(9, 31, 21, 0.58),
+      0 4px 10px -9px rgba(9, 31, 21, 0.5);
+    filter: saturate(1.03) contrast(1.04) brightness(1.01);
+    transition:
+      transform 220ms ease,
+      box-shadow 220ms ease,
+      filter 220ms ease;
+  }
+
+  .resolv-theme :where(a:hover, article:hover, .group:hover)
+    :where(img[data-astro-image]):not(.ui-avatar):not(.ui-plain-image) {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow:
+      0 30px 60px -40px rgba(9, 31, 21, 0.68),
+      0 6px 14px -10px rgba(9, 31, 21, 0.56);
+    filter: saturate(1.05) contrast(1.05) brightness(1.01);
+  }
+
+  .dark.resolv-theme :where(img[data-astro-image]):not(.ui-avatar):not(.ui-plain-image) {
+    border-color: color-mix(in srgb, var(--resolv-border) 75%, transparent);
+    filter: saturate(1.02) contrast(1.05) brightness(0.98);
+    box-shadow:
+      0 24px 56px -40px rgba(0, 0, 0, 0.72),
+      0 6px 14px -11px rgba(0, 0, 0, 0.64);
+  }
+
+  /* Keep avatars crisp and unaffected by media framing */
+  .resolv-theme :where(img.ui-avatar) {
+    border-radius: 999px;
+    box-shadow: none;
+    filter: none;
+    transform: none;
+    border-width: 0;
   }
 }

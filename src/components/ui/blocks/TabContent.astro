@@ -20,8 +20,8 @@ const firstClass = first ? '' : 'hidden';
 // Set class based on 'second' property
 // If 'second' is present, use an alternate style for the image
 const secondClass = second
-  ? 'shadow-xl aspect-video object-contain bg-neutral-300 dark:bg-neutral-600 p-3 lg:object-cover lg:aspect-square shadow-neutral-200 rounded-xl dark:shadow-neutral-900/[.2]'
-  : 'shadow-xl aspect-video object-cover lg:aspect-square shadow-neutral-200 rounded-xl dark:shadow-neutral-900/[.2]';
+  ? 'aspect-video rounded-3xl border border-[var(--resolv-border)] bg-[var(--resolv-card)] p-3 object-contain shadow-[0_20px_45px_-40px_rgba(18,56,37,0.45)] lg:aspect-square lg:object-cover'
+  : 'aspect-video rounded-3xl border border-[var(--resolv-border)] bg-[var(--resolv-surface)] object-cover shadow-[0_20px_45px_-40px_rgba(18,56,37,0.45)] lg:aspect-square';
 
 /*
 first: This property should be set to true for the initial TabContent component

@@ -11,14 +11,14 @@ interface Props {
 }
 ---
 
-<section class="relative mx-auto max-w-[85rem] px-4 pt-10 pb-24 sm:px-6 lg:px-8">
+<section class="relative mx-auto max-w-[85rem] rounded-4xl border border-[var(--resolv-border)] bg-[var(--resolv-card)] px-4 pt-14 pb-14 shadow-[0_30px_70px_-55px_rgba(18,56,37,0.45)] sm:px-6 lg:px-8">
   <div class="mx-auto mt-5 max-w-xl text-center">
-    <h2 class="block text-4xl leading-tight font-bold tracking-tight text-balance text-neutral-800 md:text-5xl lg:text-6xl dark:text-neutral-200">
+    <h2 class="block text-5xl leading-tight tracking-tight text-balance text-[var(--resolv-text)] md:text-6xl lg:text-7xl">
       {title}
     </h2>
   </div>
   <div class="mx-auto mt-5 max-w-3xl text-center">
-    {subTitle && <p class="text-lg text-pretty text-neutral-600 dark:text-neutral-400">{subTitle}</p>}
+    {subTitle && <p class="text-lg text-pretty text-[var(--resolv-muted)]">{subTitle}</p>}
   </div>
   {url && (
     <div class="mt-8 flex justify-center gap-3">

@@ -5,16 +5,16 @@ const footerLinks = [
     section: 'Plateforme',
     links: [
       { name: 'Resolv DRS', url: '/fr' },
-      { name: 'Architecture', url: '#architecture' },
-      { name: "Cas d'usage", url: '#use-cases' },
+      { name: 'Architecture', url: '/fr#architecture' },
+      { name: "Cas d'usage", url: '/fr#use-cases' },
     ],
   },
   {
     section: 'Entreprise',
     links: [
-      { name: 'Helios Industrial Components', url: '#' },
-      { name: 'Contact', url: '#contact' },
-      { name: 'Confidentialite', url: '#' },
+      { name: 'Resolv', url: '/fr/company' },
+      { name: 'Contact', url: '/fr/contact' },
+      { name: 'Confidentialite', url: '/fr/privacy' },
     ],
   },
 ];

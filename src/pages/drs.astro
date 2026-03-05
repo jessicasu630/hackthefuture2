@@ -353,21 +353,35 @@ Executive Priorities for Current Quarter:
       .btn { background: var(--accent); color: #fff; }
       .ghost { background: transparent; color: var(--text); }
       .news-mini { display: grid; gap: 7px; }
-      .mini-card { display: grid; grid-template-columns: 104px 1fr; gap: 7px; border: 1px solid var(--line); border-radius: 9px; padding: 6px; text-decoration: none; color: inherit; }
+      .mini-card { display: grid; grid-template-columns: 104px 1fr; gap: 7px; border: 1px solid var(--line); border-radius: 11px; padding: 6px; text-decoration: none; color: inherit; background: color-mix(in srgb, var(--bg) 92%, #fff 8%); }
       .thumb {
         display: block;
         width: 100%;
         aspect-ratio: 16 / 9;
         height: auto;
         object-fit: cover;
-        border-radius: 7px;
+        object-position: center;
+        border-radius: 10px;
         border: 1px solid var(--line);
+        box-shadow:
+          0 14px 28px -22px rgba(0, 0, 0, .5),
+          0 3px 8px -6px rgba(0, 0, 0, .4);
+        filter: saturate(1.03) contrast(1.04);
+        transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
       }
       .news-title { margin: 0; font-size: .74rem; line-height: 1.24; }
       .meta { margin: 4px 0 0; font-size: .66rem; color: var(--muted); line-height: 1.24; }
       .news-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; align-content: start; }
-      .news-card { border: 1px solid var(--line); border-radius: 10px; padding: 7px; text-decoration: none; color: inherit; display: grid; gap: 6px; }
+      .news-card { border: 1px solid var(--line); border-radius: 12px; padding: 7px; text-decoration: none; color: inherit; display: grid; gap: 6px; background: color-mix(in srgb, var(--bg) 92%, #fff 8%); }
       .news-card .thumb { width: 100%; aspect-ratio: 16 / 9; height: auto; }
+      .mini-card:hover .thumb,
+      .news-card:hover .thumb {
+        transform: translateY(-1px) scale(1.01);
+        box-shadow:
+          0 20px 34px -24px rgba(0, 0, 0, .58),
+          0 5px 10px -7px rgba(0, 0, 0, .46);
+        filter: saturate(1.06) contrast(1.05);
+      }
       .news-card h3 {
         display: -webkit-box;
         -webkit-line-clamp: 2;

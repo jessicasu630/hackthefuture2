@@ -10,14 +10,14 @@ interface Props {
 }
 ---
 
-<li class="-m-0.5 flex flex-col p-4 sm:p-8">
+<li class="-m-0.5 flex flex-col border-[var(--resolv-border)] p-5 sm:p-8 odd:border-r even:border-r-0 [&:nth-child(-n+2)]:border-b">
   <div
-    class="mb-2 flex items-end gap-x-2 text-3xl font-bold text-neutral-800 sm:text-5xl dark:text-neutral-200"
+    class="mb-2 flex items-end gap-x-2 text-4xl font-semibold text-[var(--resolv-text)] sm:text-5xl"
   >
     {index === 1 || index === 2 ? <Icon name="arrowUp" /> : null}
     {count}
   </div>
-  <p class="text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
+  <p class="text-sm text-[var(--resolv-muted)] sm:text-base">
     {description}
   </p>
 </li>

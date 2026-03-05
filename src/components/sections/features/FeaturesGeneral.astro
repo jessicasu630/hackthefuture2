@@ -22,10 +22,10 @@ const { title, subTitle, src, alt, features } = Astro.props;
 ---
 
 <section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8 lg:py-16 2xl:max-w-full"
 >
   {/* Block to display the feature image */}
-  <div class="relative mx-auto mb-6 w-full max-w-[19rem] overflow-hidden sm:max-w-[24rem] md:mb-8 lg:max-w-[30rem]">
+  <div class="relative mx-auto mb-6 w-full max-w-[19rem] overflow-hidden rounded-4xl border border-[var(--resolv-border)] bg-[var(--resolv-card)] p-4 shadow-[0_24px_70px_-52px_rgba(18,56,37,0.5)] sm:max-w-[24rem] md:mb-8 lg:max-w-[30rem]">
     {
       src && alt && (
         <Image
@@ -43,19 +43,17 @@ const { title, subTitle, src, alt, features } = Astro.props;
   {
     /* Displaying the main content consisting of title, subtitle, and several `IconBlock` components */
   }
-  <div class="mt-5 grid gap-8 lg:mt-16 lg:grid-cols-3 lg:gap-12">
+  <div class="mt-8 grid gap-8 lg:mt-16 lg:grid-cols-3 lg:gap-12">
     {/* Block for title and subtitle */}
     <div class="lg:col-span-1">
       {/* Rendering title */}
-      <h2
-        class="text-2xl font-bold text-balance text-neutral-800 md:text-3xl dark:text-neutral-200"
-      >
+      <h2 class="text-4xl text-balance text-[var(--resolv-text)] md:text-6xl">
         {title}
       </h2>
       {/* Rendering subtitle */}
       {
         subTitle && (
-          <p class="mt-2 text-pretty text-neutral-600 md:mt-4 dark:text-neutral-400">
+          <p class="mt-4 text-pretty text-lg text-[var(--resolv-muted)] md:mt-4">
             {subTitle}
           </p>
         )
